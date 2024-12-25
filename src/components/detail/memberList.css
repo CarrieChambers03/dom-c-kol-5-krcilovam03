@@ -1,0 +1,539 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 426px) {
+    .memberList {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 90vh;
+        background-color: white;
+        box-shadow: 0px -5px 5px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1100;
+        opacity: 1;
+        border-radius: 20px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .memberList h3 {
+        margin-top: 20px;
+        margin-bottom: 0px;
+        text-align: center;
+        font-size: 150%;
+        text-decoration: underline;
+    }
+
+    .memberList .ownerMembers {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100%;
+        width: fit-content;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .memberList .ownerMembers .owner {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        width: fit-content;
+        color: blue;
+        font-size: larger;
+        font-weight: bold;
+        text-shadow: 0.5px 0.5px 1px black;
+    }
+
+    .memberList .ownerMembers .members {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100%;
+        width: fit-content;
+        margin-top: 7px;
+        gap: 5px;
+    }
+
+    .memberList .ownerMembers .members .member {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        width: fit-content;
+        color: black;
+        font-size: medium;
+    }
+
+    .memberList button {
+        border-radius: 5px;
+        padding: 10px 15px;
+        width: fit-content;
+        border: 1px solid black;
+        font-size: medium;
+        margin-bottom: 20px;
+    }
+
+    .memberList .inviteButton {
+        background-color: rgb(59, 59, 228);
+        color: white;
+    }
+
+    .memberList .leaveButton {
+        background-color: rgb(228, 59, 59);
+        color: white;
+    }
+
+    .memberList .memberWindowsBackdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+
+    .memberList .leaveWindow {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: fit-content;
+        background-color: white;
+        box-shadow: 0px -5px 5px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1100;
+        opacity: 1;
+        border-radius: 20px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .memberList h2 {
+        font-size: large;
+        margin-top: 20px;
+        font-weight: lighter;
+        text-align: center;
+    }
+
+    .memberList .leaveWindow .buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .memberList .leaveWindow .buttons button {
+        border-radius: 5px;
+        padding: 10px 15px;
+        width: fit-content;
+        border: 1px solid black;
+        font-size: medium;
+    }
+
+    .memberList .leaveWindow .buttons .confirm{
+        background-color: rgb(228, 59, 59);
+        color: white;
+    }
+
+    .memberList .inviteWindow {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: fit-content;
+        background-color: white;
+        box-shadow: 0px -5px 5px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1100;
+        opacity: 1;
+        border-radius: 20px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .memberList .inviteWindow h2 {
+        margin-bottom: 0px;
+    }
+    .memberList .inviteWindow input {
+        width: 55%;
+        height: 30px;
+        border-radius: 5px;
+        font-size: 90%;
+    }
+    .memberList .inviteWindow input:focus {
+        outline: none;
+        border-color: rgb(59, 59, 228);
+        box-shadow: 0px 0px 5px 0px rgb(59, 59, 228);
+    }
+
+    .memberList .inviteWindow .warning{
+        color: red;
+    }
+
+    .memberList .inviteWindow .buttons, .memberList .inviteWindow .buttonsAfterWarning {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .memberList .inviteWindow .buttons .confirm, .memberList .inviteWindow .buttonsAfterWarning .confirm {
+        background-color: rgb(59, 59, 228);
+        color: white;
+    }
+
+    .memberList .inviteWindow .buttons{
+        margin-top: 28px;
+    }
+
+    .memberList .memberWindow {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: fit-content;
+        background-color: white;
+        box-shadow: 0px -5px 5px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1100;
+        opacity: 1;
+        border-radius: 20px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .memberList .memberWindow .buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .memberList .memberWindow .buttons .confirm {
+        background-color: red;
+        color: white;
+    }
+
+    .memberList .confirmationWindow {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: fit-content;
+        background-color: white;
+        box-shadow: 0px -5px 5px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1100;
+        opacity: 1;
+        border-radius: 20px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .memberList .confirmationWindow .buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .memberList .confirmationWindow .buttons .confirm {
+        background-color: red;
+        color: white;
+    }
+}
+
+@media (min-width: 426.1px) {
+    .memberList {
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        position: relative;
+        bottom: 0;
+        left: 0;
+        width: 20%;
+        height: 100%;
+        gap: 10px;
+        margin-left: 50px;
+    }
+
+    .memberList h3 {
+        height: 1px;
+        display: none;
+    }
+
+    .memberList .ownerMembers {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: start;
+        height: 100%;
+        width: fit-content;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .memberList .ownerMembers .owner {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: start;
+        height: fit-content;
+        width: fit-content;
+        color: blue;
+        font-size: larger;
+        font-weight: bold;
+        text-shadow: 0.5px 0.5px 1px black;
+    }
+
+    .memberList .ownerMembers .members {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: start;
+        height: 100%;
+        width: fit-content;
+        margin-top: 7px;
+        gap: 5px;
+    }
+
+    .memberList .ownerMembers .members::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    .memberList .ownerMembers .members::-webkit-scrollbar-track {
+        background: transparent; /* Background of the scrollbar track */
+    }
+
+    .memberList .ownerMembers .members::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        border: 2px solid transparent;
+    }
+
+    .memberList .ownerMembers .members .member {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: start;
+        height: fit-content;
+        width: fit-content;
+        color: black;
+        font-size: medium;
+    }
+
+    .memberList button {
+        align-self: center;
+        border-radius: 5px;
+        padding: 10px 15px;
+        width: fit-content;
+        border: 1px solid black;
+        font-size: medium;
+        margin-bottom: 20px;
+    }
+
+    .memberList .inviteButton {
+        background-color: rgb(59, 59, 228);
+        color: white;
+    }
+
+    .memberList .leaveButton {
+        background-color: rgb(228, 59, 59);
+        color: white;
+    }
+
+    .memberList .memberWindowsBackdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+
+    .memberList .leaveWindow {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: fit-content;
+        height: fit-content;
+        background-color: white;
+        box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
+        z-index: 1100;
+        opacity: 1;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .memberList h2 {
+        font-size: large;
+        margin-top: 20px;
+        font-weight: lighter;
+        text-align: center;
+    }
+
+    .memberList .leaveWindow .buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .memberList .leaveWindow .buttons button {
+        border-radius: 5px;
+        padding: 10px 15px;
+        width: fit-content;
+        border: 1px solid black;
+        font-size: medium;
+    }
+
+    .memberList .leaveWindow .buttons .confirm{
+        background-color: rgb(228, 59, 59);
+        color: white;
+    }
+
+    .memberList .inviteWindow {
+        position: fixed;
+        width: fit-content;
+        height: fit-content;
+        background-color: white;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+        z-index: 1100;
+        opacity: 1;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        padding-right: 50px;
+        padding-left: 50px;
+    }
+
+    .memberList .inviteWindow h2 {
+        margin-bottom: 0px;
+    }
+    .memberList .inviteWindow input {
+        width: 90%;
+        height: 30px;
+        border-radius: 5px;
+        font-size: 90%;
+    }
+    .memberList .inviteWindow input:focus {
+        outline: none;
+        border-color: rgb(59, 59, 228);
+        box-shadow: 0px 0px 5px 0px rgb(59, 59, 228);
+    }
+
+    .memberList .inviteWindow .warning{
+        color: red;
+    }
+
+    .memberList .inviteWindow .buttons, .memberList .inviteWindow .buttonsAfterWarning {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .memberList .inviteWindow .buttons .confirm, .memberList .inviteWindow .buttonsAfterWarning .confirm {
+        background-color: rgb(59, 59, 228);
+        color: white;
+    }
+
+    .memberList .inviteWindow .buttons{
+        margin-top: 28px;
+    }
+
+    .memberList .memberWindow {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: fit-content;
+        height: fit-content;
+        background-color: white;
+        box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
+        z-index: 1100;
+        opacity: 1;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .memberList .memberWindow .buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .memberList .memberWindow .buttons .confirm {
+        background-color: red;
+        color: white;
+    }
+
+    .memberList .confirmationWindow{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: fit-content;
+        height: fit-content;
+        background-color: white;
+        box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
+        z-index: 1100;
+        opacity: 1;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .memberList .confirmationWindow .buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .memberList .confirmationWindow .buttons .confirm {
+        background-color: red;
+        color: white;
+    }
+}

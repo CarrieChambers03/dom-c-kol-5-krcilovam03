@@ -1,0 +1,330 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+}
+
+.mainBody .backdrop{
+    position: flex;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 900;
+}
+
+@media (max-width: 426px) {
+    .mainBody {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        overflow-y: auto;
+        position: relative;
+    }
+
+    .mainBody .lists {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 90vw;
+        margin: 20px;
+    }
+
+    .mainBody .lists .list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-self: center;
+        gap: 5px;
+        width: 100%;
+        font-size: 120%;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+    .mainBody .lists a {
+        text-decoration: none;
+        color: black;
+        width: 100%;
+        height: fit-content;
+        box-sizing: border-box;
+        align-self: center;
+    }
+
+    .mainBody .lists .listTile {
+        display: block;
+        padding: 20px;
+        border: 1px solid black;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .mainBody .addList {
+        display: flex;
+        position: fixed;
+        flex-direction: column;
+        align-items: flex-end;
+        align-self: flex-end;
+        gap: 20px;
+        width: auto;
+        bottom: 20px;
+        right: 20px;
+        font-size: 300%;
+    }
+    .mainBody .addList path {
+        color: rgb(59, 59, 228);
+        border-radius: 50%;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .mainBody .newListForm {    
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: fit-content;
+        background-color: white;
+        box-shadow: 0px -5px 5px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1100;
+        opacity: 1;
+        border-radius: 20px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .mainBody .newListForm input {
+        width: 75%;
+        height: 30px;
+        border-radius: 5px;
+        border: 1px solid black;
+        font-size: 90%;
+    }
+
+    .mainBody .newListForm input:focus {
+        outline: none;
+        border-color: rgb(59, 59, 228);
+        box-shadow: 0px 0px 5px 0px rgb(59, 59, 228);
+    }
+
+    .mainBody .newListForm .buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .mainBody .newListForm .buttons button {
+        border-radius: 5px;
+        padding: 10px 15px;
+        width: fit-content;
+        border: 1px solid black;
+    }
+
+    .mainBody .newListForm .buttons .confirm{
+        background-color: rgb(59, 59, 228);
+        color: white;
+        border: 1px solid rgb(59, 59, 228);
+    }
+}
+
+@media (min-width: 426.1px) {
+    .mainBody {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        height: 100%;
+        width: 100vw;
+        margin-bottom: 0px;
+        overflow-y: auto;
+        position: relative;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .mainBody .lists {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 20px;
+        grid-auto-flow: row dense;
+        align-items: start;
+        height: fit-content;
+        width: 95%;
+        margin-top: 5px;
+        overflow: hidden;
+        overflow-y: auto;
+    }
+    .mainBody .lists::-webkit-scrollbar {
+        width: 12px; /* Width of the scrollbar */
+    }
+    
+    .mainBody .lists::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+        border-radius: 10px; 
+    }
+    
+    .mainBody .lists::-webkit-scrollbar-thumb {
+        background: #888; 
+        border-radius: 10px; 
+    }
+    
+    .mainBody .lists::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+    }
+
+    .mainBody .lists .list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 5px;
+        font-size: 120%;
+    }
+
+    .mainBody .lists a {
+        text-decoration: none;
+        color: black;
+        width: fit-content;
+        height: fit-content;
+        box-sizing: border-box;
+    }
+
+    .mainBody .lists .listTile {
+        display: block;
+        padding: 20px;
+        border: 1px solid black;
+        border-radius: 10px;
+        cursor: pointer;
+        min-height: 25px;
+        min-width: 15vw;
+    }
+
+    .mainBody .addList {
+        display: flex;
+        position: fixed;
+        flex-direction: column;
+        align-items: flex-end;
+        align-self: flex-end;
+        gap: 20px;
+        width: auto;
+        bottom: 20px;
+        right: 20px;
+        font-size: 300%;
+    }
+    .mainBody .addList path {
+        color: rgb(59, 59, 228);
+        border-radius: 50%;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .mainBody .newListForm {    
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: fit-content;
+        height: fit-content;
+        background-color: white;
+        box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
+        z-index: 1100;
+        opacity: 1;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .mainBody .newListForm input {
+        width: 90%;
+        height: 30px;
+        border-radius: 5px;
+        border: 1px solid black;
+        font-size: 90%;
+    }
+    .mainBody .newListForm input:focus {
+        outline: none;
+        border-color: rgb(59, 59, 228);
+        box-shadow: 0px 0px 5px 0px rgb(59, 59, 228);
+    }
+
+    .mainBody .newListForm .buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .mainBody .newListForm .buttons button {
+        border-radius: 5px;
+        padding: 10px 15px;
+        width: fit-content;
+        border: 1px solid black;
+    }
+
+    .mainBody .newListForm .buttons .confirm{
+        background-color: rgb(59, 59, 228);
+        color: white;
+        border: 1px solid rgb(59, 59, 228);
+    }
+
+    .mainBody .confirmation {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: fit-content;
+        height: fit-content;
+        background-color: white;
+        box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
+        z-index: 1100;
+        opacity: 1;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+    .mainBody .confirmation h3 {
+        font-size: 110%;
+        font-weight: lighter;
+    }
+    .mainBody .confirmation .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 5px;
+        margin-bottom: 20px;
+    }
+    .mainBody .confirmation .buttons button {
+        border-radius: 5px;
+        padding: 10px 15px;
+        width: fit-content;
+        border: 1px solid black;
+    }
+    .mainBody .confirmation .buttons .confirm {
+        background-color: rgb(145, 42, 42);
+        color: white;
+        border: 1px solid rgb(145, 42, 42);
+    }
+}

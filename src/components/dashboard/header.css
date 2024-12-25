@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 426px){
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        width: 100vw;
+        height: fit-content;
+        padding-bottom: 15px;
+        margin-bottom: 0px;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+    .header .welcomeMessage {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        text-decoration: underline;
+        text-align: center;
+    }
+    .header .icons {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        font-size: 150%;
+        padding-bottom: 0px;
+    }
+    .header .icons span .archiveSpanSlashed {
+        text-decoration: line-through;
+        color: red;
+    }
+
+    .header .menu {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: fit-content;
+        background-color: white;
+        box-shadow: 0px -5px 5px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1100;
+        opacity: 1;
+        border-radius: 20px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        font-size: 120%;
+    }
+}
+
+@media (min-width: 426.1px) {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 10px;
+        background-color: rgba(0, 0, 255, 0.419);
+        border-bottom: 2px solid black;
+        box-sizing: border-box;
+    }
+
+    .header h2 {
+        font-size: 175%;
+        margin-left: 20px;
+    }
+
+    .header .icons {
+        display: flex;
+        gap: 35px;
+        margin-right: 40px;
+        font-size: 165%;
+    }
+
+    .header .icons span {
+        margin-left: 10px;
+    }
+
+    .header .menu {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: fit-content;
+        height: fit-content;
+        background-color: white;
+        box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
+        z-index: 1100;
+        opacity: 1;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        padding-top: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 20px;
+        font-size: 120%;
+    }
+}

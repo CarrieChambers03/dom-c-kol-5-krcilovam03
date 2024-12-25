@@ -1,0 +1,21 @@
+.body {
+    font-family: Arial, sans-serif;
+    margin: 0px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    padding: 0;
+    width: 100vw;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+}
