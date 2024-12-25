@@ -5,6 +5,7 @@ import { faCirclePlus, faBox, faBoxOpen, faTrash } from "@fortawesome/free-solid
 import { PulseLoader } from 'react-spinners';
 
 import { SettingsContext } from "../../helpers/settingsContext";
+import { languages } from "../../helpers/languages";
 
 import LoadLists from "../../helpers/loadLists";
 import CreateNewList from "../../helpers/createNewList";
@@ -12,7 +13,7 @@ import CreateNewList from "../../helpers/createNewList";
 import "./mainBody.css";
 
 export default function MainBody ({ archive, onChange, reload }) {
-    const { userId } = useContext(SettingsContext);
+    const { userId, lang } = useContext(SettingsContext);
 
     const [userLists, setUserLists] = useState([]);
     const [showNewListForm, setShowNewListForm] = useState(false);
@@ -54,19 +55,19 @@ export default function MainBody ({ archive, onChange, reload }) {
         }} onLoading={() => setLoading(true)} />}
 
         {loading && <div className='loading'><PulseLoader color='blue' loading={loading} size={15} /></div>}
-        {error && <div className="error">{error}<Link to='/'>Back to menu</Link></div>}
+        {error && <div className="error">{error}<Link to='/'>{languages[lang].backToSettings}</Link></div>}
 
         {showNewListForm && <div>
             <div className="backdrop" onClick={() => setShowNewListForm(false)}></div>
             <div className="newListForm">
                 <input type="text" value={newList} onChange={(e) => setNewList(e.target.value)} />
                 <div className="buttons">
-                    <button onClick={() => setShowNewListForm(false)}>Cancel</button>    
+                    <button onClick={() => setShowNewListForm(false)}>{languages[lang].cancel}</button>    
                     <button className="confirm" onClick={() => {
                         setCreateNewList({name: newList, owner: userId});
                         setShowNewListForm(false);
                         setNewList("");
-                    }}>Submit</button>
+                    }}>{languages[lang].create}</button>
                 </div>
             </div>
         </div>}
@@ -74,14 +75,14 @@ export default function MainBody ({ archive, onChange, reload }) {
         {showConfirmation && <div>
             <div className='backdrop'></div>
             <div className='confirmation'>
-                <h3>{`Do you want to ${action.a} this list?`}</h3>
+                <h3>{languages[lang].confirmation.replace("{action}", languages[lang][action.a])}</h3>
                 <div className='buttons'>
-                    <button className='cancel' onClick={() => {setShowConfirmation(false); setAction(null)}}>cancel</button>
+                    <button className='cancel' onClick={() => {setShowConfirmation(false); setAction(null)}}>{languages[lang].cancel}</button>
                     <button className='confirm' onClick={() => {
                         setShowConfirmation(false);
                         setAction(null);
                         onChange(action.a, action.list, userId)
-                    }}>{action.a}</button>
+                    }}>{languages[lang][action.a]}</button>
                 </div>
             </div>    
         </div>}
