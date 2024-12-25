@@ -12,6 +12,13 @@ const en = {
     archive: "Archive",
     unarchive: "Unarchive",
     leave: "Leave",
+    listName: "Enter new list name",
+    save: "Save",
+    clear: "Clear",
+    settings: "Settings",
+    filterText: "Hide completed items",
+    nameChange: "Change Name",
+    list: "List",
 };
 
 const cz = {
@@ -28,6 +35,13 @@ const cz = {
     archive: "Archivovat",
     unarchive: "Obnovit",
     leave: "Opustit",
+    listName: "Zadejte nový název seznamu",
+    save: "Uložit",
+    clear: "Vymazat",
+    settings: "Nastavení",
+    filterText: "Skrýt dokončené položky",
+    nameChange: "Změnit název",
+    list: "Seznam",
 };
 
 export const languages = {en, cz}
