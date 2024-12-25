@@ -25,7 +25,8 @@ const users = [
 
 function App() {
   const [settings, setSettings] = React.useState({
-    userId: "a"
+    userId: "a",
+    lang: "en",
   });
 
   return (
