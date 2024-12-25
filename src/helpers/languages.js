@@ -28,6 +28,11 @@ const en = {
     yourself: "You can't invite yourself.",
     invite: "Invite",
     members: "Members",
+    newItem: "New Item",
+    name: "Name",
+    quantity: "Quantity",
+    mandatory: "This field is mandatory.",
+    add: "Add",
 };
 
 const cz = {
@@ -60,6 +65,11 @@ const cz = {
     yourself: "Nemůžete pozvat sami sebe.",
     invite: "Pozvat",
     members: "Členové",
+    newItem: "Nová položka",
+    name: "Název",
+    quantity: "Množství",
+    mandatory: "Toto pole je povinné.",
+    add: "Přidat",
 };
 
 export const languages = {en, cz}

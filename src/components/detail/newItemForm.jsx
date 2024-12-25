@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { SettingsContext } from "../../helpers/settingsContext";
+import { languages } from "../../helpers/languages";
 
 import './newItemForm.css';
 
 export default function NewItemForm({ onSubmit, onCancel }){
+    const { lang } = useContext(SettingsContext);
     const [ name, setName ] = useState('');
     const [ quantity, setQuantity ] = useState(1);
 
@@ -10,9 +13,9 @@ export default function NewItemForm({ onSubmit, onCancel }){
     const [ showNumberWarning, setShowNumberWarning ] = useState(false);
 
     return(<div className="newItemForm">
-        <h3>New Item</h3>
+        <h3>{languages[lang].newItem}</h3>
         <label>
-            Name
+            {languages[lang]["name"]}
             <input
                 type="text"
                 value={name}
@@ -22,10 +25,10 @@ export default function NewItemForm({ onSubmit, onCancel }){
                 }}
                 className="itemNameField"
             />
-            {showNameWarning && <div className="warning">This field is mandatory.</div>}
+            {showNameWarning && <div className="warning">{languages[lang].mandatory}</div>}
         </label>
         <label>
-            Quantity
+            {languages[lang]["quantity"]}
             <input
                 type="number"
                 className="quantityInput"
@@ -42,15 +45,15 @@ export default function NewItemForm({ onSubmit, onCancel }){
                     }
                 }}
             />
-            {showNumberWarning && <div className="warning">This field is mandatory.</div>}
+            {showNumberWarning && <div className="warning">{languages[lang].mandatory}</div>}
         </label>
         <div className="buttons">
-            <button onClick={() => onCancel()}>Cancel</button>
+            <button onClick={() => onCancel()}>{languages[lang].cancel}</button>
             <button
                 className="save"
                 onClick={() => onSubmit(name, Number(quantity))}
                 disabled={Number(quantity) < 1 || name.length < 1}
-            >Add</button>
+            >{languages[lang]['add']}</button>
         </div>
     </div>)
 }

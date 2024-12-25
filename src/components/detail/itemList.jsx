@@ -3,11 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan, faSquarePlus, faSquareMinus } from '@fortawesome/free-solid-svg-icons';
 
 import { ListContext } from '../../helpers/listContext';
+import { SettingsContext } from '../../helpers/settingsContext';
+import { languages } from '../../helpers/languages';
 
 import NewItemForm from './newItemForm';
 import './itemList.css';
 
 export default function ItemList({ onItemChange }){
+    const { lang } = useContext(SettingsContext);
     const { filterSetting } = useContext(ListContext);
     const { list } = useContext(ListContext);
     const [items, setItems] = useState([]);
@@ -76,7 +79,7 @@ export default function ItemList({ onItemChange }){
             }}
         />}
 
-        <button className='newItem' onClick={() => setShowNewItemForm(true)}>Add</button>
+        <button className='newItem' onClick={() => setShowNewItemForm(true)}>{languages[lang]['add']}</button>
 
     </div>)
 }
