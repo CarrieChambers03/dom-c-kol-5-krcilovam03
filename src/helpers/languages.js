@@ -19,6 +19,15 @@ const en = {
     filterText: "Hide completed items",
     nameChange: "Change Name",
     list: "List",
+    confirmLeave: "Are you sure you want to leave this list?",
+    confirmKick: "Are you sure you want to kick this member?",
+    kick: "Kick",
+    inviteText: "Invite a member with an ID",
+    isMember: "User is already a member.",
+    userNotExist: "This user doesn't exist.",
+    yourself: "You can't invite yourself.",
+    invite: "Invite",
+    members: "Members",
 };
 
 const cz = {
@@ -42,6 +51,15 @@ const cz = {
     filterText: "Skrýt dokončené položky",
     nameChange: "Změnit název",
     list: "Seznam",
+    confirmLeave: "Opravdu chcete opustit tento seznam?",
+    confirmKick: "Opravdu chcete vyhodit tohoto člena?",
+    kick: "Vyhodit",
+    inviteText: "Pozvěte člena pomocí ID",
+    isMember: "Uživatel je již členem.",
+    userNotExist: "Tento uživatel neexistuje.",
+    yourself: "Nemůžete pozvat sami sebe.",
+    invite: "Pozvat",
+    members: "Členové",
 };
 
 export const languages = {en, cz}

@@ -5,11 +5,12 @@ import { faUserSlash } from "@fortawesome/free-solid-svg-icons";
 
 import { SettingsContext } from "../../helpers/settingsContext";
 import { ListContext } from "../../helpers/listContext";
+import { languages } from "../../helpers/languages";
 
 import "./memberList.css";
 
 export default function MemberList({ users, onMemberChange }){
-    const { userId } = useContext(SettingsContext);
+    const { userId, lang } = useContext(SettingsContext);
     const { list } = useContext(ListContext);
     const navigate = useNavigate();
 
@@ -31,20 +32,20 @@ export default function MemberList({ users, onMemberChange }){
                 <div>
                     <div className="memberWindowBackdrop"></div>
                     <div className="confirmationWindow">
-                        <h2>Are you sure you want to leave this list?</h2>
+                        <h2>{languages[lang].confirmLeave}</h2>
                         <div className="buttons">
-                            <button onClick={() => setShowConfirmation(null)}>Cancel</button>
-                            <button className="confirm" onClick={() => {onMemberChange('delete', userId); setShowConfirmation(null); navigate('/home')}}>Leave</button>
+                            <button onClick={() => setShowConfirmation(null)}>{languages[lang].cancel}</button>
+                            <button className="confirm" onClick={() => {onMemberChange('delete', userId); setShowConfirmation(null); navigate('/home')}}>{languages[lang].leave}</button>
                         </div>
                     </div>
                 </div>
             ) : (<div>
                 <div className="memberWindowBackdrop"></div>
                 <div className="confirmationWindow">
-                    <h2>Are you sure you want to kick this member?</h2>
+                    <h2>{languages[lang].confirmKick}</h2>
                     <div className="buttons">
-                        <button onClick={() => setShowConfirmation(null)}>Cancel</button>
-                        <button className="confirm" onClick={() => {onMemberChange('delete', showConfirmation); setShowConfirmation(null);}}>Kick</button>
+                        <button onClick={() => setShowConfirmation(null)}>{languages[lang].cancel}</button>
+                        <button className="confirm" onClick={() => {onMemberChange('delete', showConfirmation); setShowConfirmation(null);}}>{languages[lang].kick}</button>
                     </div>
                 </div>
             </div>)}
@@ -53,7 +54,7 @@ export default function MemberList({ users, onMemberChange }){
         {showInviteWindow && <div>
             <div className="memberWindowBackdrop"></div>
             <div className="inviteWindow">
-                <h2>Invite a Member with an ID</h2>
+                <h2>{languages[lang].inviteText}</h2>
                 <input 
                     type="text"
                     value={memberId || ''}
@@ -65,26 +66,26 @@ export default function MemberList({ users, onMemberChange }){
                     </div>
                 )}
                 <div className="buttons">
-                    <button onClick={() => {setShowInviteWindow(false); setMemberId(null); setWarning(null)}}>Cancel</button>
+                    <button onClick={() => {setShowInviteWindow(false); setMemberId(null); setWarning(null)}}>{languages[lang].cancel}</button>
                     <button className='confirm' onClick={() => {
                         if(members.some(m => m.id === memberId)){
-                            setWarning("User is already a member.");
+                            setWarning(languages[lang]['isMember']);
                         } else if (!users.some(u => u.id === memberId)){
-                            setWarning("This user doesn't exist.");
+                            setWarning(languages[lang]['userNotExist']);
                         } else if (memberId === list.owner){
-                            setWarning("You can't invite yourself.");
+                            setWarning(languages[lang]['yourself']);
                         } else {
                             setShowInviteWindow(false);
                             setMemberId(null);
                             setWarning(null);
                             onMemberChange('invite', memberId);
                         }
-                    }}>Invite</button>
+                    }}>{languages[lang].invite}</button>
                 </div>
             </div>
         </div>}
 
-        <h3>Members</h3>
+        <h3>{languages[lang]['members']}</h3>
         <div className="ownerMembers">
             {owner && <div className="owner" key={owner.id}>{owner.name}</div>}
             <div className="members">
@@ -100,9 +101,9 @@ export default function MemberList({ users, onMemberChange }){
         </div>
 
         {owner && userId === owner.id ? (
-            <button className="inviteButton" onClick={() => setShowInviteWindow(true)}>Invite</button>
+            <button className="inviteButton" onClick={() => setShowInviteWindow(true)}>{languages[lang]["invite"]}</button>
         ): (
-            <button className="leaveButton" onClick={() => setShowConfirmation("leave")}>Leave</button>
+            <button className="leaveButton" onClick={() => setShowConfirmation("leave")}>{languages[lang].leave}</button>
         )}
     </div>)
 }
