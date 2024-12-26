@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { PulseLoader } from 'react-spinners';
+import { SettingsContext } from "../helpers/settingsContext.js";
 
 import Header from "../components/dashboard/header.jsx";
 import MainBody from "../components/dashboard/mainBody.jsx";
@@ -11,6 +12,7 @@ import DeleteList from "../helpers/deleteList.js";
 import "./dashboard.css";
 
 export default function Dashboard({ users }){
+    const { darkMode } = useContext(SettingsContext);
     const [isMobile, setIsMobile] = useState(false);
     const [showArchive, setShowArchive] = useState(false);
 
@@ -37,7 +39,7 @@ export default function Dashboard({ users }){
         };
     }, []);
 
-    return(<div className="dashboard">
+    return(<div className={`dashboard${darkMode ? ' dark' : ''}`}>
         {updateLists && <UpdateList list={updateLists.list} change={
             updateLists.action === 'leave' ? 'members' : 'archive'
         } action={updateLists.action === 'leave' ? 'delete' : null} data={
@@ -63,7 +65,7 @@ export default function Dashboard({ users }){
             setDeleteList(false);
         }} onLoading={() => setLoading(true)} />}
 
-        {loading && <div className='loading'><PulseLoader color='blue' loading={loading} size={15} /></div>}
+        {loading && <div className='loading'><PulseLoader color={darkMode ? 'rgb(95, 95, 250)' : 'blue'} loading={loading} size={15} /></div>}
         {error && <div className="error">{error}<Link to='/'>Back to menu</Link></div>}
 
         <Header users={users} isMobile={isMobile} onChangePage={() => setShowArchive(!showArchive)} archive={showArchive} />

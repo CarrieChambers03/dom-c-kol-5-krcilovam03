@@ -18,6 +18,9 @@ body {
         overflow: hidden;
         box-sizing: border-box;
     }
+    .header.dark {
+        color: rgba(255, 255, 255, 0.796);
+    }
     .header .welcomeMessage {
         margin-top: 20px;
         margin-bottom: 20px;
@@ -30,10 +33,6 @@ body {
         gap: 50px;
         font-size: 150%;
         padding-bottom: 0px;
-    }
-    .header .icons span .archiveSpanSlashed {
-        text-decoration: line-through;
-        color: red;
     }
 
     .header .menu {
@@ -57,6 +56,13 @@ body {
         padding-top: 20px;
         font-size: 120%;
     }
+    .header.dark .menu {
+        background-color: rgb(32, 33, 35);
+        color: white;
+    }
+    .header.dark .menu a {
+        color: rgb(95, 95, 250);
+    }
 }
 
 @media (min-width: 426.1px) {
@@ -70,10 +76,16 @@ body {
         border-bottom: 2px solid black;
         box-sizing: border-box;
     }
+    .header.dark {
+        background-color: rgba(18, 18, 18, 0.855);
+    }
 
     .header h2 {
         font-size: 175%;
         margin-left: 20px;
+    }
+    .header.dark h2 {
+        color: rgb(95, 95, 250);
     }
 
     .header .icons {
@@ -81,6 +93,9 @@ body {
         gap: 35px;
         margin-right: 40px;
         font-size: 165%;
+    }
+    .header.dark .icons {
+        color: rgb(95, 95, 250);
     }
 
     .header .icons span {
@@ -108,5 +123,12 @@ body {
         padding-right: 30px;
         padding-bottom: 20px;
         font-size: 120%;
+    }
+    .header.dark .menu {
+        background-color: rgb(32, 33, 35);
+        color: white;
+    }
+    .header.dark .menu a {
+        color: rgb(95, 95, 250);
     }
 }

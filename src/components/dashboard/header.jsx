@@ -8,7 +8,7 @@ import { languages } from "../../helpers/languages";
 import "./header.css";
 
 export default function Header({ users, isMobile, onChangePage, archive }){
-    const { userId, lang } = useContext(SettingsContext);
+    const { userId, lang, darkMode } = useContext(SettingsContext);
     const [userName, setUserName] = useState("");
     const [showMenu, setShowMenu] = useState(false);
 
@@ -17,7 +17,7 @@ export default function Header({ users, isMobile, onChangePage, archive }){
         setUserName(user.name);
     }, [userId, users])
 
-    return(<div className="header">
+    return(<div className={`header${darkMode ? ' dark' : ''}`}>
         {showMenu && <div>
             <div className="backdrop" onClick={() => setShowMenu(false)}></div>
             <div className="menu">

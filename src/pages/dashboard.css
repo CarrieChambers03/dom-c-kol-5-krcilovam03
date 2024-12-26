@@ -19,3 +19,7 @@
     overflow: hidden;
     box-sizing: border-box;
 }
+
+.dashboard.dark {
+    background-color: rgb(32, 33, 35);
+}

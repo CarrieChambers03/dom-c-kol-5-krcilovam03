@@ -13,7 +13,7 @@ import CreateNewList from "../../helpers/createNewList";
 import "./mainBody.css";
 
 export default function MainBody ({ archive, onChange, reload }) {
-    const { userId, lang } = useContext(SettingsContext);
+    const { userId, lang, darkMode } = useContext(SettingsContext);
 
     const [userLists, setUserLists] = useState([]);
     const [showNewListForm, setShowNewListForm] = useState(false);
@@ -30,7 +30,7 @@ export default function MainBody ({ archive, onChange, reload }) {
         setLoadLists(true);
     }, [archive, reload]);
 
-    return(<div className="mainBody">
+    return(<div className={`mainBody${darkMode ? ' dark' : ''}`}>
 
         {loadLists && <LoadLists archive={archive} onLoadLists={(lists) => {
             setUserLists(lists);
@@ -54,11 +54,11 @@ export default function MainBody ({ archive, onChange, reload }) {
             setCreateNewList(null);
         }} onLoading={() => setLoading(true)} />}
 
-        {loading && <div className='loading'><PulseLoader color='blue' loading={loading} size={15} /></div>}
+        {loading && <div className='loading'><PulseLoader color={darkMode ? 'rgb(95, 95, 250)' : 'blue'} loading={loading} size={15} /></div>}
         {error && <div className="error">{error}<Link to='/'>{languages[lang].backToSettings}</Link></div>}
 
         {showNewListForm && <div>
-            <div className="backdrop" onClick={() => setShowNewListForm(false)}></div>
+            <div className={`backdrop${darkMode ? ' dark' : ''}`} onClick={() => setShowNewListForm(false)}></div>
             <div className="newListForm">
                 <input type="text" value={newList} onChange={(e) => setNewList(e.target.value)} />
                 <div className="buttons">
@@ -87,10 +87,10 @@ export default function MainBody ({ archive, onChange, reload }) {
             </div>    
         </div>}
 
-        <div className="lists">
+        <div className={`lists`}>
             {userLists.map(list => {
-                return <div className="list" key={list.id}>
-                    <Link to={`/detail/${list.id}`} ><label className="listTile">{list.name.length > 33 ? `${list.name.substring(0, 30)}...` : list.name}</label></Link>
+                return <div className={`list${darkMode ? ' dark' : ''}`} key={list.id}>
+                    <Link to={`/detail/${list.id}`} ><label className={`listTile${darkMode ? ' dark' : ''}`}>{list.name.length > 33 ? `${list.name.substring(0, 30)}...` : list.name}</label></Link>
                     {list.owner === userId &&
                     <div> 
                         {archive ? <FontAwesomeIcon onClick={() => {setAction({a: 'unarchive', list: list}); setShowConfirmation(true);}} icon={faBoxOpen} />
@@ -105,6 +105,6 @@ export default function MainBody ({ archive, onChange, reload }) {
                 </div>
             })}
         </div>
-        <FontAwesomeIcon onClick={() => setShowNewListForm(true)} icon={faCirclePlus} className="addList" />
+        <FontAwesomeIcon onClick={() => setShowNewListForm(true)} icon={faCirclePlus} className={`addList${darkMode ? ' dark' : ''}`} />
     </div>)
 }
