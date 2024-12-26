@@ -5,14 +5,14 @@ import { languages } from "../../helpers/languages";
 import './newItemForm.css';
 
 export default function NewItemForm({ onSubmit, onCancel }){
-    const { lang } = useContext(SettingsContext);
+    const { lang, darkMode } = useContext(SettingsContext);
     const [ name, setName ] = useState('');
     const [ quantity, setQuantity ] = useState(1);
 
     const [ showNameWarning, setShowNameWarning ] = useState(false);
     const [ showNumberWarning, setShowNumberWarning ] = useState(false);
 
-    return(<div className="newItemForm">
+    return(<div className={`newItemForm${darkMode ? ' dark' : ''}`}>
         <h3>{languages[lang].newItem}</h3>
         <label>
             {languages[lang]["name"]}

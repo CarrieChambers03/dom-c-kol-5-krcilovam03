@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
 //visual components
@@ -13,11 +13,13 @@ import GetList from '../helpers/getList.js';
 import UpdateList from '../helpers/updateList.js';
 import DeleteList from '../helpers/deleteList.js';
 import { ListContext } from '../helpers/listContext.js';
+import { SettingsContext } from '../helpers/settingsContext.js';
 
 import './detail.css';
 
 export default function Detail({ users }){
     const { id } = useParams();
+    const { darkMode } = useContext(SettingsContext);
 
     const [ showSettings, setShowSettings ] = useState(false);
     const [ showMembers, setShowMembers ] = useState(false);
@@ -56,7 +58,7 @@ export default function Detail({ users }){
     }
 
     return(
-        <div>
+        <div style={{backgroundColor: darkMode ? 'rgb(42, 43, 46)' : 'white'}}>
             {loadLists &&
                 <GetList id={id} onSuccess={(list) => {
                     setLoadLists(false);
@@ -102,12 +104,12 @@ export default function Detail({ users }){
             }
 
 
-            {loading && <div className='loading'><PulseLoader color='blue' loading={loading} size={15} /></div>}
+            {loading && <div className='loading'><PulseLoader color={darkMode ? 'rgb(95, 95, 250)' : 'blue'} loading={loading} size={15} /></div>}
 
-            {error && <div className='error'>{error}<Link to='/home'>Back to dashboard</Link></div>}
+            {error && <div className='error'>{error}<Link to='/home' style={{color: darkMode ? 'rgb(95, 95, 250)' : 'black'}}>Back to dashboard</Link></div>}
             
             {listContext.list && 
-                <div className="detail">
+                <div className={`detail${darkMode ? ' dark' : ''}`}>
                     <ListContext.Provider value={listContext}>
                         <ListHeader onIconClick={(icon) => {
                             if(icon === 'settings') setShowSettings(true);

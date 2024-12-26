@@ -7,14 +7,14 @@ import './listNameForm.css';
 
 export default function ListNameForm({ onCancel, onSave }){
     const { list } = useContext(ListContext);
-    const { lang } = useContext(SettingsContext);
+    const { lang, darkMode } = useContext(SettingsContext);
     const [ listName, setListName ] = useState('');
 
     useEffect(() => {
         setListName(list.name);
     }, [list]);
 
-    return(<div className='listNameForm'>
+    return(<div className={`listNameForm${darkMode ? ' dark' : ''}`}>
         <h3>{languages[lang].listName}</h3>
         <div className='inputField'>
             <input type='text' onChange={(e) => setListName(e.target.value)} value={listName} />

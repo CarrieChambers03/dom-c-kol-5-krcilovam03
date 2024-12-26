@@ -23,6 +23,10 @@ body {
         flex-direction: column;
         gap: 10px;
     }
+    .newItemForm.dark {
+        background-color: rgb(32, 33, 35);
+        color: white;
+    }
 
     .newItemForm .inputFields {
         display: flex;
@@ -44,6 +48,19 @@ body {
         border-radius: 5px;
         font-size: 90%;
     }
+    .newItemForm.dark input {
+        background-color: rgb(42, 43, 46);
+        color: white;
+        border: 1px solid rgb(42, 43, 46);
+    }
+    .newItemForm.dark input:focus {
+        border-color: rgb(212, 212, 212);
+        box-shadow: 0px 0px 5px 0px rgb(212, 212, 212);
+    }
+    .newItemForm.dark label {
+        font-weight: lighter;
+    }
+
     .newItemForm .inputFields .itemNameField:focus {
         outline: none;
         border-color: rgb(59, 59, 228);
@@ -77,10 +94,19 @@ body {
         width: fit-content;
         border: 1px solid black;
     }
+    .newItemForm.dark .buttons button {
+        background-color: #3f3f3f;
+        border: 1px solid #3f3f3f;
+        color: white;
+    }
     .newItemForm .buttons .save{
         background-color: rgb(59, 59, 228);
         color: white;
         border: 1px solid rgb(59, 59, 228);
+    }
+    .newItemForm.dark .buttons .save {
+        background-color: rgb(95, 95, 250);
+        border: 1px solid rgb(95, 95, 250);
     }
     .newItemForm .buttons button:disabled{
         opacity: 0.5;
@@ -123,6 +149,10 @@ body {
         flex-direction: column;
         gap: 10px;
     }
+    .newItemForm.dark {
+        background-color: rgb(32, 33, 35);
+        color: white;
+    }
 
     .newItemForm .inputFields {
         display: flex;
@@ -144,6 +174,19 @@ body {
         border-radius: 5px;
         font-size: 90%;
     }
+    .newItemForm.dark input {
+        background-color: rgb(42, 43, 46);
+        color: white;
+        border: 1px solid rgb(42, 43, 46);
+    }
+    .newItemForm.dark input:focus {
+        border-color: rgb(181, 181, 181);
+        box-shadow: 0px 0px 5px 0px rgb(181, 181, 181);
+    }
+    .newItemForm.dark label {
+        font-weight: lighter;
+    }
+
     .newItemForm .inputFields .itemNameField:focus {
         outline: none;
         border-color: rgb(59, 59, 228);
@@ -177,10 +220,19 @@ body {
         width: fit-content;
         border: 1px solid black;
     }
+    .newItemForm.dark .buttons button {
+        background-color: #3f3f3f;
+        border: 1px solid #3f3f3f;
+        color: white;
+    }
     .newItemForm .buttons .save{
         background-color: rgb(59, 59, 228);
         color: white;
         border: 1px solid rgb(59, 59, 228);
+    }
+    .newItemForm.dark .buttons .save {
+        background-color: rgb(95, 95, 250);
+        border: 1px solid rgb(95, 95, 250);
     }
     .newItemForm .buttons button:disabled{
         opacity: 0.5;

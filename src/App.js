@@ -27,7 +27,7 @@ function App() {
   const [settings, setSettings] = React.useState({
     userId: "a",
     lang: "en",
-    darkMode: true
+    darkMode: false
   });
 
   return (

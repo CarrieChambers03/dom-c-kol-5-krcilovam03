@@ -23,6 +23,9 @@
         box-sizing: border-box;
         overflow: hidden;
     }
+    .itemList.dark {
+        color: white;
+    }
     
     .itemList .items {
         display: flex;
@@ -40,6 +43,9 @@
         box-sizing: border-box;
         overflow-y: scroll;
         flex-grow: 1;
+    }
+    .itemList.dark .items {
+        border: 1px solid white;
     }
     
     .itemList .items .item {
@@ -73,8 +79,14 @@
         margin: 0;
         padding: 0;
     }
+    .itemList.dark .items .buttons .icon {
+        color: rgb(95, 95, 250);
+    }
     .itemList .items .buttons .icon.disabled {
         color: gray;
+    }
+    .itemList.dark .items .buttons .icon.disabled {
+        color: rgba(95, 95, 250, 0.392);
     }
     
     .itemList .items input[type="checkbox"] {
@@ -98,6 +110,9 @@
     }
     .checkbox--active {
         background-color: rgb(59, 59, 228);
+    }
+    .itemList.dark .checkbox--active {
+        background-color: rgb(95, 95, 250);
     }
     
     .itemList .newItem {
@@ -134,6 +149,11 @@
         border-radius: 100px;
         margin-top: auto;
     }
+    .itemList.dark .newItem {
+        background-color: rgb(95, 95, 250);
+        border: 1px solid rgb(95, 95, 250);
+        font-weight: normal;
+    }
 }
 
 @media (min-width: 426.1px) {
@@ -149,6 +169,10 @@
         height: 100%;
         box-sizing: border-box;
         overflow: hidden;
+    }
+    .itemList.dark {
+        background-color: rgb(32, 33, 35);
+        color: white;
     }
 
     .itemList .items {
@@ -167,6 +191,10 @@
         overflow-y: auto;
         border-right: 1.5px solid black;
         border-bottom: 1px dashed black;
+    }
+    .itemList.dark .items {
+        border-right: 1.5px solid white;
+        border-bottom: 1px dashed white;
     }
 
     .itemList .items::-webkit-scrollbar {
@@ -193,7 +221,6 @@
         text-align: center;
         font-size: 110%;
         box-sizing: border-box;
-        border: 1px solid white;
     }
     
     .itemList .items .itemCheck {
@@ -216,8 +243,14 @@
         margin: 0;
         padding: 0;
     }
+    .itemList.dark .items .buttons .icon {
+        color: rgb(95, 95, 250);
+    }
     .itemList .items .buttons .icon.disabled {
         color: gray;
+    }
+    .itemList.dark .items .buttons .icon.disabled {
+        color: rgba(95, 95, 250, 0.392);
     }
     
     .itemList .items input[type="checkbox"] {
@@ -242,6 +275,9 @@
     .checkbox--active {
         background-color: rgb(59, 59, 228);
     }
+    .itemList.dark .checkbox--active {
+        background-color: rgb(95, 95, 250);
+    }
     
     .itemList .newItem {
         display: flex;
@@ -258,5 +294,10 @@
         color: white;
         border: 1px solid rgb(59, 59, 228);
         border-radius: 100px;
+    }
+    .itemList.dark .newItem {
+        background-color: rgb(95, 95, 250);
+        border: 1px solid rgb(95, 95, 250);
+        font-weight: normal;
     }
 }

@@ -23,6 +23,10 @@ body {
         flex-direction: column;
         gap: 10px;
     }
+    .memberList.dark {
+        background-color: rgb(32, 33, 35);
+        color: white;
+    }
 
     .memberList h3 {
         margin-top: 20px;
@@ -30,6 +34,10 @@ body {
         text-align: center;
         font-size: 150%;
         text-decoration: underline;
+    }
+    .memberList.dark h3 {
+        color: rgba(255, 255, 255, 0.71);
+        font-weight: lighter;
     }
 
     .memberList .ownerMembers {
@@ -55,6 +63,9 @@ body {
         font-weight: bold;
         text-shadow: 0.5px 0.5px 1px black;
     }
+    .memberList.dark .ownerMembers .owner {
+        color: rgb(95, 95, 250);
+    }
 
     .memberList .ownerMembers .members {
         display: flex;
@@ -77,6 +88,9 @@ body {
         color: black;
         font-size: medium;
     }
+    .memberList.dark .ownerMembers .members .member {
+        color: rgba(255, 255, 255, 0.805);
+    }
 
     .memberList button {
         border-radius: 5px;
@@ -86,15 +100,26 @@ body {
         font-size: medium;
         margin-bottom: 20px;
     }
+    .memberList.dark button {
+        background-color: #3f3f3f;
+        border: 1px solid #3f3f3f;
+        color: white;
+    }
 
     .memberList .inviteButton {
         background-color: rgb(59, 59, 228);
         color: white;
     }
+    .memberList.dark .inviteButton {
+        background-color: rgb(95, 95, 250);
+    }
 
     .memberList .leaveButton {
         background-color: rgb(228, 59, 59);
         color: white;
+    }
+    .memberList.dark .leaveButton {
+        background-color: rgba(142, 47, 47, 0.762);
     }
 
     .memberList .memberWindowsBackdrop {
@@ -107,49 +132,11 @@ body {
         z-index: 1000;
     }
 
-    .memberList .leaveWindow {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100vw;
-        height: fit-content;
-        background-color: white;
-        box-shadow: 0px -5px 5px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1100;
-        opacity: 1;
-        border-radius: 20px;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        gap: 10px;
-    }
-
     .memberList h2 {
         font-size: large;
         margin-top: 20px;
         font-weight: lighter;
         text-align: center;
-    }
-
-    .memberList .leaveWindow .buttons {
-        display: flex;
-        flex-direction: row;
-        gap: 30px;
-    }
-
-    .memberList .leaveWindow .buttons button {
-        border-radius: 5px;
-        padding: 10px 15px;
-        width: fit-content;
-        border: 1px solid black;
-        font-size: medium;
-    }
-
-    .memberList .leaveWindow .buttons .confirm{
-        background-color: rgb(228, 59, 59);
-        color: white;
     }
 
     .memberList .inviteWindow {
@@ -170,6 +157,10 @@ body {
         flex-direction: column;
         gap: 10px;
     }
+    .memberList.dark .inviteWindow {
+        background-color: rgb(32, 33, 35);
+        color: white;
+    }
 
     .memberList .inviteWindow h2 {
         margin-bottom: 0px;
@@ -179,6 +170,15 @@ body {
         height: 30px;
         border-radius: 5px;
         font-size: 90%;
+    }
+    .memberList.dark input {
+        background-color: rgb(42, 43, 46);
+        color: white;
+        border: 1px solid rgb(42, 43, 46);
+    }
+    .memberList.dark input:focus {
+        border-color: rgb(181, 181, 181);
+        box-shadow: 0px 0px 5px 0px rgb(181, 181, 181);
     }
     .memberList .inviteWindow input:focus {
         outline: none;
@@ -200,39 +200,12 @@ body {
         background-color: rgb(59, 59, 228);
         color: white;
     }
+    .memberList.dark .inviteWindow .buttons .confirm {
+        background-color: rgb(95, 95, 250);
+    }
 
     .memberList .inviteWindow .buttons{
         margin-top: 28px;
-    }
-
-    .memberList .memberWindow {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100vw;
-        height: fit-content;
-        background-color: white;
-        box-shadow: 0px -5px 5px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1100;
-        opacity: 1;
-        border-radius: 20px;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .memberList .memberWindow .buttons {
-        display: flex;
-        flex-direction: row;
-        gap: 30px;
-    }
-
-    .memberList .memberWindow .buttons .confirm {
-        background-color: red;
-        color: white;
     }
 
     .memberList .confirmationWindow {
@@ -253,6 +226,10 @@ body {
         flex-direction: column;
         gap: 10px;
     }
+    .memberList.dark .confirmationWindow {
+        background-color: rgb(32, 33, 35);
+        color: white;
+    }
 
     .memberList .confirmationWindow .buttons {
         display: flex;
@@ -263,6 +240,9 @@ body {
     .memberList .confirmationWindow .buttons .confirm {
         background-color: red;
         color: white;
+    }
+    .memberList.dark .confirmationWindow .buttons .confirm {
+        background-color: rgba(142, 47, 47, 0.762);
     }
 }
 
@@ -308,6 +288,9 @@ body {
         font-weight: bold;
         text-shadow: 0.5px 0.5px 1px black;
     }
+    .memberList.dark .ownerMembers .owner {
+        color: rgb(95, 95, 250);
+    }
 
     .memberList .ownerMembers .members {
         display: flex;
@@ -344,6 +327,9 @@ body {
         color: black;
         font-size: medium;
     }
+    .memberList.dark .ownerMembers .members .member {
+        color: rgba(255, 255, 255, 0.805);
+    }
 
     .memberList button {
         align-self: center;
@@ -354,15 +340,26 @@ body {
         font-size: medium;
         margin-bottom: 20px;
     }
+    .memberList.dark button {
+        background-color: #3f3f3f;
+        border: 1px solid #3f3f3f;
+        color: white;
+    }
 
     .memberList .inviteButton {
         background-color: rgb(59, 59, 228);
         color: white;
     }
+    .memberList.dark .inviteButton {
+        background-color: rgb(95, 95, 250);
+    }
 
     .memberList .leaveButton {
         background-color: rgb(228, 59, 59);
         color: white;
+    }
+    .memberList.dark .leaveButton {
+        background-color: rgba(142, 47, 47, 0.762);
     }
 
     .memberList .memberWindowsBackdrop {
@@ -375,107 +372,23 @@ body {
         z-index: 1000;
     }
 
-    .memberList .leaveWindow {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: fit-content;
-        height: fit-content;
-        background-color: white;
-        box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
-        z-index: 1100;
-        opacity: 1;
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        gap: 10px;
-        padding-left: 40px;
-        padding-right: 40px;
-    }
-
     .memberList h2 {
         font-size: large;
         margin-top: 20px;
         font-weight: lighter;
         text-align: center;
     }
-
-    .memberList .leaveWindow .buttons {
-        display: flex;
-        flex-direction: row;
-        gap: 30px;
-    }
-
-    .memberList .leaveWindow .buttons button {
-        border-radius: 5px;
-        padding: 10px 15px;
-        width: fit-content;
-        border: 1px solid black;
-        font-size: medium;
-    }
-
-    .memberList .leaveWindow .buttons .confirm{
-        background-color: rgb(228, 59, 59);
+    .memberList.dark input {
+        background-color: rgb(42, 43, 46);
         color: white;
+        border: 1px solid rgb(42, 43, 46);
+    }
+    .memberList.dark input:focus {
+        border-color: rgb(181, 181, 181);
+        box-shadow: 0px 0px 5px 0px rgb(181, 181, 181);
     }
 
     .memberList .inviteWindow {
-        position: fixed;
-        width: fit-content;
-        height: fit-content;
-        background-color: white;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
-        z-index: 1100;
-        opacity: 1;
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        gap: 10px;
-        padding-right: 50px;
-        padding-left: 50px;
-    }
-
-    .memberList .inviteWindow h2 {
-        margin-bottom: 0px;
-    }
-    .memberList .inviteWindow input {
-        width: 90%;
-        height: 30px;
-        border-radius: 5px;
-        font-size: 90%;
-    }
-    .memberList .inviteWindow input:focus {
-        outline: none;
-        border-color: rgb(59, 59, 228);
-        box-shadow: 0px 0px 5px 0px rgb(59, 59, 228);
-    }
-
-    .memberList .inviteWindow .warning{
-        color: red;
-    }
-
-    .memberList .inviteWindow .buttons, .memberList .inviteWindow .buttonsAfterWarning {
-        display: flex;
-        flex-direction: row;
-        gap: 30px;
-    }
-
-    .memberList .inviteWindow .buttons .confirm, .memberList .inviteWindow .buttonsAfterWarning .confirm {
-        background-color: rgb(59, 59, 228);
-        color: white;
-    }
-
-    .memberList .inviteWindow .buttons{
-        margin-top: 28px;
-    }
-
-    .memberList .memberWindow {
         position: fixed;
         top: 50%;
         left: 50%;
@@ -494,16 +407,23 @@ body {
         padding-left: 30px;
         padding-right: 30px;
     }
+    .memberList.dark .inviteWindow {
+        background-color: rgb(32, 33, 35);
+        color: white;
+    }
 
-    .memberList .memberWindow .buttons {
+    .memberList .inviteWindow .buttons {
         display: flex;
         flex-direction: row;
         gap: 30px;
     }
 
-    .memberList .memberWindow .buttons .confirm {
-        background-color: red;
+    .memberList .inviteWindow .buttons .confirm {
+        background-color: rgb(59, 59, 228);
         color: white;
+    }
+    .memberList.dark .inviteWindow .buttons .confirm {
+        background-color: rgb(95, 95, 250);
     }
 
     .memberList .confirmationWindow{
@@ -525,6 +445,10 @@ body {
         padding-left: 30px;
         padding-right: 30px;
     }
+    .memberList.dark .confirmationWindow {
+        background-color: rgb(32, 33, 35);
+        color: white;
+    }
 
     .memberList .confirmationWindow .buttons {
         display: flex;
@@ -535,5 +459,8 @@ body {
     .memberList .confirmationWindow .buttons .confirm {
         background-color: red;
         color: white;
+    }
+    .memberList.dark .confirmationWindow .buttons .confirm {
+        background-color: rgba(142, 47, 47, 0.762);
     }
 }

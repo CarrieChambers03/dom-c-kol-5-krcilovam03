@@ -7,7 +7,7 @@ import ListNameForm from './listNameForm.jsx';
 import './listSettings.css';
 
 export default function ListSettings({ onClose }){
-    const { userId, lang } = useContext(SettingsContext);
+    const { userId, lang, darkMode } = useContext(SettingsContext);
     const { filterSetting } = useContext(ListContext);
     const { list } = useContext(ListContext);
 
@@ -17,7 +17,7 @@ export default function ListSettings({ onClose }){
     const [ showNameForm, setShowNameForm ] = useState(false);
     const [ showConfirmation, setShowConfirmation ] = useState(false);
 
-    return(<div className='settingsWindow'>
+    return(<div className={`settingsWindow${darkMode? ' dark': ''}`}>
         {showNameForm && <div>
             <div className='backdrop'></div>
             <ListNameForm onCancel={() => setShowNameForm(false)} onSave={(name) => {

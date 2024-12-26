@@ -57,11 +57,25 @@ body {
         width: 100vw;
         margin-bottom: 0px;
     }
+    .detail.dark {
+        background-color: rgb(32, 33, 35);
+        color: white;
+    }
 
-    .detail .lisHeader h2 {
+    .detail .listHeader {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .detail .listHeader h2 {
         margin-top: 20px;
         margin-bottom: 20px;
         text-decoration: underline;
+    }
+    .detail.dark .listHeader h2 {
+        font-weight: lighter;
     }
 
     .icons {
@@ -69,6 +83,9 @@ body {
         justify-content: center;
         gap: 50px;
         font-size: 150%;
+    }
+    .detail.dark .listHeader .icons a {
+        color: white;
     }
 
     .detail .membersBackdrop {
@@ -103,6 +120,10 @@ body {
         height: 100vh;
         width: 100vw;
     }
+    .detail.dark {
+        background-color: rgb(32, 33, 35);
+        color: white;
+    }
     .detail .listHeader {
         display: flex;
         justify-content: space-between;
@@ -111,6 +132,9 @@ body {
         padding: 10px;
         background-color: rgba(0, 0, 255, 0.419);
         border-bottom: 2px solid black;
+    }
+    .detail.dark .listHeader {
+        background-color: rgb(19, 20, 20);
     }
     .detail .listHeader h2 {
         font-size: 175%;
@@ -121,6 +145,12 @@ body {
         gap: 35px;
         margin-right: 40px;
         font-size: 165%;
+    }
+    .detail.dark .listHeader .icons {
+        color: rgb(95, 95, 250);
+    }
+    .detail.dark .listHeader .icons a {
+        color: rgb(95, 95, 250);
     }
 
     .detail .content {

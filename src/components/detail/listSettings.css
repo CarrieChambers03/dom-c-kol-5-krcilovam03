@@ -35,6 +35,10 @@ body {
         flex-direction: column;
         gap: 10px;
     }
+    .settingsWindow.dark {
+        background-color: rgb(32, 33, 35);
+        color: white;
+    }
 
     .settingsWindow .xButton {
         position:absolute;
@@ -45,12 +49,18 @@ body {
         font-size: 1.7em;
         color: rgb(145, 42, 42);
     }
+    .settingsWindow.dark .xButton {
+        color: rgba(142, 47, 47, 0.762);
+    }
 
     .settingsWindow h3 {
         margin-top: 20px;
         margin-bottom: 5px;
         text-align: center;
         font-size: larger;
+    }
+    .settingsWindow.dark h3 {
+        font-weight: lighter;
     }
 
     .settingsWindow .filterCheckbox {
@@ -92,6 +102,10 @@ body {
         font-size: medium;
         font-weight: bold;
     }
+    .settingsWindow.dark .buttons .nameChangeButton {
+        background-color: rgb(95, 95, 250);
+        font-weight: normal;
+    }
     .settingsWindow .buttons .archiveButton {
         background-color: rgb(255, 128, 0);
         color: white;
@@ -101,6 +115,10 @@ body {
         font-size: medium;
         font-weight: bold;
     }
+    .settingsWindow.dark .buttons .archiveButton {
+        background-color: rgb(251, 153, 55);
+        color: rgb(25, 25, 25);
+    }
     .settingsWindow .buttons .deleteButton {
         background-color: rgb(145, 42, 42);
         color: white;
@@ -109,6 +127,10 @@ body {
         padding: 10px 20px;
         font-size: medium;
         font-weight: bold;
+    }
+    .settingsWindow.dark .buttons .deleteButton {
+        background-color: rgba(142, 47, 47, 0.762);
+        font-weight: normal;
     }
 
     .settingsWindow .confirmation {
@@ -129,6 +151,9 @@ body {
         flex-direction: column;
         gap: 10px;
     }
+    .settingsWindow.dark .confirmation {
+        background-color: rgb(32, 33, 35);
+    }
     .settingsWindow .confirmation .buttons {
         display: flex;
         flex-direction: row;
@@ -143,10 +168,18 @@ body {
         width: fit-content;
         border: 1px solid black;
     }
+    .settingsWindow.dark .confirmation .buttons button {
+        background-color: #3f3f3f;
+        border: 1px solid #3f3f3f;
+        color: white;
+    }
     .settingsWindow .confirmation .buttons .confirm {
         background-color: rgb(145, 42, 42);
         color: white;
         border: 1px solid rgb(145, 42, 42);
+    }
+    .settingsWindow.dark .confirmation .buttons .confirm {
+        background-color: rgba(142, 47, 47, 0.762);
     }
 }
 
@@ -170,6 +203,9 @@ body {
         padding-left: 30px;
         padding-right: 30px;
     }
+    .settingsWindow.dark {
+        background-color: rgb(32, 33, 35);
+    }
 
     .settingsWindow .xButton {
         position:absolute;
@@ -180,12 +216,18 @@ body {
         font-size: 1.7em;
         color: rgb(145, 42, 42);
     }
+    .settingsWindow.dark .xButton {
+        color: rgba(142, 47, 47, 0.762);
+    }
 
     .settingsWindow h3 {
         margin-top: 20px;
         margin-bottom: 5px;
         text-align: center;
         font-size: 150%;
+    }
+    .settingsWindow.dark h3 {
+        font-weight: lighter;
     }
 
     .settingsWindow .filterCheckbox {
@@ -227,6 +269,10 @@ body {
         font-size: medium;
         font-weight: bold;
     }
+    .settingsWindow.dark .buttons .nameChangeButton {
+        background-color: rgb(95, 95, 250);
+        font-weight: normal;
+    }
     .settingsWindow .buttons .archiveButton {
         background-color: rgb(255, 128, 0);
         color: white;
@@ -236,6 +282,10 @@ body {
         font-size: medium;
         font-weight: bold;
     }
+    .settingsWindow.dark .buttons .archiveButton {
+        background-color: rgb(251, 153, 55);
+        color: rgb(25, 25, 25);
+    }
     .settingsWindow .buttons .deleteButton {
         background-color: rgb(145, 42, 42);
         color: white;
@@ -244,6 +294,10 @@ body {
         padding: 10px 20px;
         font-size: medium;
         font-weight: bold;
+    }
+    .settingsWindow.dark .buttons .deleteButton {
+        background-color: rgba(142, 47, 47, 0.762);
+        font-weight: normal;
     }
 
     .settingsWindow .confirmation {
@@ -265,6 +319,9 @@ body {
         padding-right: 30px;
         padding-left: 30px;
     }
+    .settingsWindow.dark .confirmation {
+        background-color: rgb(32, 33, 35);
+    }
     .settingsWindow .confirmation h3 {
         font-size: 110%;
         font-weight: lighter;
@@ -283,9 +340,17 @@ body {
         width: fit-content;
         border: 1px solid black;
     }
+    .settingsWindow.dark .confirmation .buttons button {
+        background-color: #3f3f3f;
+        border: 1px solid #3f3f3f;
+        color: white;
+    }
     .settingsWindow .confirmation .buttons .confirm {
         background-color: rgb(145, 42, 42);
         color: white;
         border: 1px solid rgb(145, 42, 42);
+    }
+    .settingsWindow.dark .confirmation .buttons .confirm {
+        background-color: rgba(142, 47, 47, 0.762);
     }
 }

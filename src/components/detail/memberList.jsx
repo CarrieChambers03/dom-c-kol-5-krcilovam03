@@ -10,7 +10,7 @@ import { languages } from "../../helpers/languages";
 import "./memberList.css";
 
 export default function MemberList({ users, onMemberChange }){
-    const { userId, lang } = useContext(SettingsContext);
+    const { userId, lang, darkMode } = useContext(SettingsContext);
     const { list } = useContext(ListContext);
     const navigate = useNavigate();
 
@@ -26,7 +26,7 @@ export default function MemberList({ users, onMemberChange }){
         setMembers(users.filter(u => list.members.includes(u.id)));
     }, [list, users]);
 
-    return(<div className="memberList">
+    return(<div className={`memberList${darkMode ? ' dark' : ''}`}>
         {showConfirmation && <div>
             {showConfirmation === "leave" ? (
                 <div>

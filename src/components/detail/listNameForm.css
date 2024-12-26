@@ -23,6 +23,10 @@ body {
         flex-direction: column;
         gap: 10px;
     }
+    .listNameForm.dark {
+        background-color: rgb(32, 33, 35);
+        color: white;
+    }
 
     .listNameForm .inputField {
         display: flex;
@@ -41,10 +45,19 @@ body {
         border: 1px solid black;
         font-size: 90%;
     }
+    .listNameForm.dark .inputField input {
+        background-color: rgb(42, 43, 46);
+        color: white;
+        border: 1px solid rgb(42, 43, 46);
+    }
     .listNameForm .inputField input:focus {
         outline: none;
         border-color: rgb(59, 59, 228);
         box-shadow: 0px 0px 5px 0px rgb(59, 59, 228);
+    }
+    .listNameForm.dark .inputField input:focus {
+        border-color: rgb(181, 181, 181);
+        box-shadow: 0px 0px 5px 0px rgb(181, 181, 181);
     }
     .listNameForm .inputField .clear {
         height: 34px;
@@ -54,6 +67,11 @@ body {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
         font-size: 100%;
+    }
+    .listNameForm.dark .inputField .clear {
+        background-color: #3f3f3f;
+        border: 1px solid #3f3f3f;
+        color: white;
     }
 
     .listNameForm .nameButtons {
@@ -71,11 +89,20 @@ body {
         width: fit-content;
         border: 1px solid black;
     }
+    .listNameForm.dark .nameButtons button {
+        background-color: #3f3f3f;
+        border: 1px solid #3f3f3f;
+        color: white;
+    }
 
     .listNameForm .nameButtons .save{
         background-color: rgb(59, 59, 228);
         color: white;
         border: 1px solid rgb(59, 59, 228);
+    }
+    .listNameForm.dark .nameButtons .save {
+        background-color: rgb(95, 95, 250);
+        border: 1px solid rgb(95, 95, 250);
     }
 }
 
@@ -99,6 +126,10 @@ body {
         padding-left: 30px;
         padding-right: 30px;
     }
+    .listNameForm.dark {
+        background-color: rgb(32, 33, 35);
+        color: white;
+    }
     .listNameForm h3{
         font-size: 110%;
         font-weight: lighter;
@@ -121,10 +152,19 @@ body {
         border: 1px solid black;
         font-size: 90%;
     }
+    .listNameForm.dark .inputField input {
+        background-color: rgb(42, 43, 46);
+        color: white;
+        border: 1px solid rgb(42, 43, 46);
+    }
     .listNameForm .inputField input:focus {
         outline: none;
         border-color: rgb(59, 59, 228);
         box-shadow: 0px 0px 5px 0px rgb(59, 59, 228);
+    }
+    .listNameForm.dark .inputField input:focus {
+        border-color: rgb(181, 181, 181);
+        box-shadow: 0px 0px 5px 0px rgb(181, 181, 181);
     }
     .listNameForm .inputField .clear {
         height: 34px;
@@ -134,6 +174,11 @@ body {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
         font-size: 100%;
+    }
+    .listNameForm.dark .inputField .clear {
+        background-color: #3f3f3f;
+        border: 1px solid #3f3f3f;
+        color: white;
     }
 
     .listNameForm .nameButtons {
@@ -151,10 +196,19 @@ body {
         width: fit-content;
         border: 1px solid black;
     }
+    .listNameForm.dark .nameButtons button {
+        background-color: #3f3f3f;
+        border: 1px solid #3f3f3f;
+        color: white;
+    }
 
     .listNameForm .nameButtons .save{
         background-color: rgb(59, 59, 228);
         color: white;
         border: 1px solid rgb(59, 59, 228);
+    }
+    .listNameForm.dark .nameButtons .save {
+        background-color: rgb(95, 95, 250);
+        border: 1px solid rgb(95, 95, 250);
     }
 }

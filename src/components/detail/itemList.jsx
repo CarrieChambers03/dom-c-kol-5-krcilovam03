@@ -10,7 +10,7 @@ import NewItemForm from './newItemForm';
 import './itemList.css';
 
 export default function ItemList({ onItemChange }){
-    const { lang } = useContext(SettingsContext);
+    const { lang, darkMode } = useContext(SettingsContext);
     const { filterSetting } = useContext(ListContext);
     const { list } = useContext(ListContext);
     const [items, setItems] = useState([]);
@@ -22,7 +22,7 @@ export default function ItemList({ onItemChange }){
         else{setItems(list.items);}
     }, [list, filterSetting]);
 
-    return(<div className='itemList'>
+    return(<div className={`itemList${darkMode ? ' dark' : ''}`}>
         <div className='items'>
             {items.map(i => {return(
                 <div key={i.name} className={i.state}>
@@ -44,7 +44,7 @@ export default function ItemList({ onItemChange }){
                         <div className='itemName' title={i.name.length > 10 ? i.name : ''}>
                             {i.name.length > 10 ? i.name.slice(0, 7) + '...' : i.name}
                         </div>
-                        <div>{`x${i.quantity}`}</div>
+                        <div>{i.quantity}</div>
                         </label>
 
                         <div className="buttons">
