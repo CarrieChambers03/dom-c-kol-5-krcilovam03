@@ -33,6 +33,10 @@ const en = {
     quantity: "Quantity",
     mandatory: "This field is mandatory.",
     add: "Add",
+    manageLists: "manage your shopping lists in one place",
+    userSelect: "Select User:",
+    languageSelect: "Select Language:",
+    continueToApp: "Continue into the App",
 };
 
 const cz = {
@@ -70,6 +74,10 @@ const cz = {
     quantity: "Množství",
     mandatory: "Toto pole je povinné.",
     add: "Přidat",
+    manageLists: "spravujte své nákupní seznamy na jednom místě",
+    userSelect: "Vyberte uživatele:",
+    languageSelect: "Vyberte jazyk:",
+    continueToApp: "Pokračovat do aplikace",
 };
 
 export const languages = {en, cz}
