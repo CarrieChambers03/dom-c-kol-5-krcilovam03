@@ -35,7 +35,13 @@ function App() {
       <SettingsContext.Provider value={settings}>
         <Routes>
           <Route path='*' element={ <h1>404 Page not Found</h1> } />
-          <Route path="/" element={ <Menu users={users} onUserIdChange={(id) => {setSettings({...settings, userId: id})}} /> } />
+          <Route path="/" element={ 
+            <Menu 
+              users={users} 
+              onUserIdChange={(id) => {setSettings({...settings, userId: id})}} 
+              onDarkModeChange={(val) => {setSettings({...settings, darkMode: val})}}
+              onLangChange={(language) => {setSettings({...settings, lang: language})}}
+            /> } />
           <Route path='/detail/:id' element={ <Detail users={users} /> } />
           <Route path='/home' element={ <Dashboard users={users} /> } />
         </Routes>
